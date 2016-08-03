@@ -5,7 +5,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>9907ec16-ead4-4f7e-a026-e51e29d250e9</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Trading.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,7 +25,6 @@
   <ItemGroup>
     <Compile Include="Dogs_of_the_Dow.py" />
     <Compile Include="Indicators.py" />
-    <Compile Include="Trading.py" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
