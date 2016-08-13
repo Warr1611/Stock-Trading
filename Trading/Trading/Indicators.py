@@ -1,6 +1,7 @@
 import pandas as pd
 
 
+# Moving Average
 def simple_moving_average(prices, num_days, symbol):
     """
 
@@ -13,6 +14,7 @@ def simple_moving_average(prices, num_days, symbol):
     return prices["SMA"]
 
 
+# Exponential Moving Average
 def exponentially_weighted_sma(prices, num_days, symbol):
     """
 
@@ -25,6 +27,7 @@ def exponentially_weighted_sma(prices, num_days, symbol):
     return prices["EMA"]
 
 
+# Bollinger Bands
 def bollinger_bands(prices, num_days, symbol):
     """
 
@@ -52,6 +55,7 @@ def bollinger_bands(prices, num_days, symbol):
     return prices["BB"]
 
 
+# Momentum
 def momentum(prices, num_days, symbol):
     """
 
@@ -64,6 +68,7 @@ def momentum(prices, num_days, symbol):
     return prices["MM"]
 
 
+# Volatility
 def volatility(prices, num_days, symbol):
     """
 
@@ -80,17 +85,27 @@ def volatility(prices, num_days, symbol):
     # Standard Deviation
     return pd.rolling_std(daily_returns, num_days)
 
-# Moving Average
-
-# Exponential Moving Average
-
-# Momentum
 
 # Rate of Change
+def rate_of_change(prices, num_days, symbol):
+    roc = (prices[symbol] - prices[symbol].shift(num_days) / prices[symbol].shift(num_days)) * 100
+    return roc
+
 
 # Average True Range
+def average_true_range(prices, num_days, symbol):
+    tr = []
+    # Current High less the current Low
+    prices["TR1"] = prices["High"] - prices["Low"]
+    # Current High less the previous Close (absolute value)
+    prices["TR2"] = abs(prices["High"] - prices["Close"].shift(1))
+    # Current Low less the previous Close (absolute value)
+    prices["TR3"] = abs(prices["Low"] - prices["Close"].shift(1))
 
-# Bollinger Bands
+    prices["TR"] = prices[["TR1", "TR2", "TR3"]].max(axis=1)
+    prices["ATR"] = pd.rolling_mean(prices["TR"], num_days)
+    return prices
+
 
 # Pivot Points, Supports and Resistances
 

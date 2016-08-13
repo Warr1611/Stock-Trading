@@ -5,8 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>9907ec16-ead4-4f7e-a026-e51e29d250e9</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>
-    </StartupFile>
+    <StartupFile>Email_Parser.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,7 +23,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Dogs_of_the_Dow.py" />
+    <Compile Include="Email_Parser.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Indicators.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="client_secret_858943483448-lebr404rqt5uabkqlnb8jn5ijvgde607.apps.googleusercontent.com.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".credentials\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,9 +1,9 @@
 import pytz
 from datetime import datetime
-from Zipline.api import order, symbol, record, order_target, sid
-from Zipline.algorithm import TradingAlgorithm
-from Zipline.utils.factory import load_bars_from_yahoo
-import Zipline.api as api
+from zipline.api import order, symbol, record, order_target, sid
+from zipline.algorithm import TradingAlgorithm
+from zipline.utils.factory import load_bars_from_yahoo
+from zipline import api
 
 dow_constituents = [
     ["1999-11-01", sid(4922), 1],  # Minnesota Mining & Manufacturing/3M Company
